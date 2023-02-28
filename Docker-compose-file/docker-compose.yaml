@@ -1,0 +1,18 @@
+version: '3'
+ 
+services:
+    apache_1:
+        container_name: apptest1
+        image: osamaelqadiy/java1
+        ports:
+          - "9090:8080"
+    apache_2:
+        container_name: apptest2
+        build: /home/osama/Java-testapp
+        ports:
+          - "8080:8080"
+    haproxy_img:
+        container_name: haproxy
+        build: ./haproxy
+        ports:
+          - 80:80
